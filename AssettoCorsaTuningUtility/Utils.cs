@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AssettoCorsaTuningUtility
 {
@@ -29,10 +30,24 @@ namespace AssettoCorsaTuningUtility
             File.Move($"{carPath}\\data.acd", $"{carPath}\\data_back_up.acd");
         }
 
-        public static void UpdateCarData()
+        public static void CreateNewCar(string parentCar, string childCar)
         {
-            
+            Directory.CreateDirectory(childCar);
+            //Now Create all of the directories
+            foreach (var dirPath in Directory.GetDirectories(parentCar, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(parentCar, childCar));
+            }
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (var newPath in Directory.GetFiles(parentCar, "*.*", SearchOption.AllDirectories))
+            {
+                File.Copy(newPath, newPath.Replace(parentCar, childCar), true);
+            }
         }
 
+        public static void UpdateCarData()
+        {
+        }
     }
 }

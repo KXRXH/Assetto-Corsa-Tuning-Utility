@@ -61,7 +61,12 @@ namespace AssettoCorsaTuningUtility
             }
         }
 
-        private void TuneThisBtn_Click(object sender, EventArgs e)
+        private void OnCarValueChange(object sender, EventArgs e)
+        {
+            label1.Text = e.ToString();
+        }
+        
+        private void StartTuningEvent()
         {
             EnginePage.Enabled = true;
             EngineSwapPage.Enabled = true;
@@ -80,15 +85,29 @@ namespace AssettoCorsaTuningUtility
             }
         }
 
-
+        private void CreateNewCarBtn_Click(object sender, EventArgs e)
+        {
+            if (newCarNameTextBox.Text == "") return;
+            var newCar = $"{AssettoCorsaFolderPath}/content/cars/{newCarNameTextBox.Text}";
+            Utils.UnpackCar(_currentCar);
+            Utils.CreateNewCar(_currentCar, newCar);
+            _currentCar = newCar;
+            StartTuningEvent();
+        }
+        
         private void CreateChildBtn_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (newTuneNameTextBox.Text == "") return;
+            var newCar = $"{_currentCar}_{newTuneNameTextBox.Text}";
+            Utils.UnpackCar(_currentCar);
+            Utils.CreateNewCar(_currentCar, newCar);
+            _currentCar = newCar;
+            StartTuningEvent();
         }
-
-        private void OnCarValueChange(object sender, EventArgs e)
+        
+        private void TuneThisBtn_Click(object sender, EventArgs e)
         {
-            label1.Text = e.ToString();
+            StartTuningEvent();
         }
     }
 }

@@ -51,6 +51,12 @@ namespace AssettoCorsaTuningUtility
             this.CreateChildBtn = new System.Windows.Forms.Button();
             this.tooltp = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.newTuneNameTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.newCarNameTextBox = new System.Windows.Forms.TextBox();
+            this.createNewCarBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.picbox_car)).BeginInit();
             this.tabs.SuspendLayout();
             this.EnginePage.SuspendLayout();
@@ -127,6 +133,7 @@ namespace AssettoCorsaTuningUtility
             // 
             // engineTextBox
             // 
+            this.engineTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.engineTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.engineTextBox.Location = new System.Drawing.Point(0, -1);
             this.engineTextBox.Name = "engineTextBox";
@@ -150,6 +157,7 @@ namespace AssettoCorsaTuningUtility
             // 
             // drivetrainTextBox
             // 
+            this.drivetrainTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.drivetrainTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.drivetrainTextBox.Location = new System.Drawing.Point(0, 0);
             this.drivetrainTextBox.Name = "drivetrainTextBox";
@@ -193,7 +201,8 @@ namespace AssettoCorsaTuningUtility
             // 
             // TuneThisBtn
             // 
-            this.TuneThisBtn.Location = new System.Drawing.Point(16, 309);
+            this.TuneThisBtn.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.TuneThisBtn.Location = new System.Drawing.Point(16, 347);
             this.TuneThisBtn.Name = "TuneThisBtn";
             this.TuneThisBtn.Size = new System.Drawing.Size(194, 43);
             this.TuneThisBtn.TabIndex = 5;
@@ -203,11 +212,12 @@ namespace AssettoCorsaTuningUtility
             // 
             // CreateChildBtn
             // 
-            this.CreateChildBtn.Location = new System.Drawing.Point(243, 309);
+            this.CreateChildBtn.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.CreateChildBtn.Location = new System.Drawing.Point(243, 347);
             this.CreateChildBtn.Name = "CreateChildBtn";
             this.CreateChildBtn.Size = new System.Drawing.Size(194, 43);
             this.CreateChildBtn.TabIndex = 6;
-            this.CreateChildBtn.Text = "Create a child";
+            this.CreateChildBtn.Text = "Create a child tune";
             this.CreateChildBtn.UseVisualStyleBackColor = true;
             this.CreateChildBtn.Click += new System.EventHandler(this.CreateChildBtn_Click);
             // 
@@ -219,12 +229,75 @@ namespace AssettoCorsaTuningUtility
             this.label1.TabIndex = 7;
             this.label1.Visible = false;
             // 
+            // newTuneNameTextBox
+            // 
+            this.newTuneNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newTuneNameTextBox.Location = new System.Drawing.Point(16, 323);
+            this.newTuneNameTextBox.Name = "newTuneNameTextBox";
+            this.newTuneNameTextBox.Size = new System.Drawing.Size(417, 20);
+            this.newTuneNameTextBox.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label2.Location = new System.Drawing.Point(16, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(411, 22);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Enter new tune name or edit current car";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // newCarNameTextBox
+            // 
+            this.newCarNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.newCarNameTextBox.Location = new System.Drawing.Point(16, 444);
+            this.newCarNameTextBox.Name = "newCarNameTextBox";
+            this.newCarNameTextBox.Size = new System.Drawing.Size(421, 20);
+            this.newCarNameTextBox.TabIndex = 10;
+            // 
+            // createNewCarBtn
+            // 
+            this.createNewCarBtn.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.createNewCarBtn.Location = new System.Drawing.Point(16, 470);
+            this.createNewCarBtn.Name = "createNewCarBtn";
+            this.createNewCarBtn.Size = new System.Drawing.Size(421, 43);
+            this.createNewCarBtn.TabIndex = 11;
+            this.createNewCarBtn.Text = "Create New Car";
+            this.createNewCarBtn.UseVisualStyleBackColor = true;
+            this.createNewCarBtn.Click += new System.EventHandler(this.CreateNewCarBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label3.Location = new System.Drawing.Point(16, 419);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(421, 22);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Enter name for new car";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label4.Location = new System.Drawing.Point(16, 397);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(421, 22);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "or";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1074, 553);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.createNewCarBtn);
+            this.Controls.Add(this.newCarNameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.newTuneNameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CreateChildBtn);
             this.Controls.Add(this.TuneThisBtn);
@@ -242,8 +315,17 @@ namespace AssettoCorsaTuningUtility
             this.DriveTrainPage.ResumeLayout(false);
             this.EngineSwapPage.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
+        
+        private System.Windows.Forms.TextBox newTuneNameTextBox;
 
+        private System.Windows.Forms.Button createNewCarBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+
+        private System.Windows.Forms.TextBox newCarNameTextBox;
+        
         private System.Windows.Forms.RichTextBox engineTextBox;
 
         private System.Windows.Forms.RichTextBox drivetrainTextBox;
@@ -252,12 +334,10 @@ namespace AssettoCorsaTuningUtility
 
         private System.Windows.Forms.Label Comment1;
 
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.TabPage EngineSwapPage;
         
-        private System.Windows.Forms.RichTextBox richTextBox1;
 
         private System.Windows.Forms.Label label1;
 
@@ -278,7 +358,7 @@ namespace AssettoCorsaTuningUtility
         private System.Windows.Forms.Button set_path_button;
         private System.Windows.Forms.Label label_path;
         
-        private String AssettoCorsaFolderPath = "";
+        public String AssettoCorsaFolderPath = "";
 
         #endregion
     }
