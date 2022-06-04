@@ -290,6 +290,7 @@ namespace AssettoCorsaTuningUtility
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1074, 553);
             this.Controls.Add(this.label4);
@@ -307,6 +308,7 @@ namespace AssettoCorsaTuningUtility
             this.Controls.Add(this.set_path_button);
             this.Controls.Add(this.carBox);
             this.Location = new System.Drawing.Point(15, 15);
+            this.MaximumSize = new System.Drawing.Size(1090, 592);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.picbox_car)).EndInit();
