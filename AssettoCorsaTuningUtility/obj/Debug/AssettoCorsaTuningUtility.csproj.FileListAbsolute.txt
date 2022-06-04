@@ -32,7 +32,6 @@ A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\obj\Debug\
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\AssettoCorsaTuningUtility.exe.config
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\AssettoCorsaTuningUtility.exe
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\AssettoCorsaTuningUtility.pdb
-A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\IniFileParser.dll
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\System.Buffers.dll
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\System.Memory.dll
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\System.Numerics.Vectors.dll
@@ -44,3 +43,5 @@ A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\System.Resources.Extensions.xml
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\obj\Debug\AssettoCorsaTuningUtility.csproj.CopyComplete
+A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\IniFile.dll
+A:\Projects\C#\Assetto-Corsa-Tuning-Utility\AssettoCorsaTuningUtility\bin\Debug\IniFile.xml

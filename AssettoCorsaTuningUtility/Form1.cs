@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using IniFile;
 
 namespace AssettoCorsaTuningUtility
 {
@@ -21,7 +23,7 @@ namespace AssettoCorsaTuningUtility
             AssettoCorsaFolderPath = reader.ReadLine();
             label_path.Text = AssettoCorsaFolderPath;
             reader.Close();
-            UpdateComboBox(this);
+            UpdateComboBox(this, carBox);
         }
 
         private void Set_Assetto_Corsa_Path(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace AssettoCorsaTuningUtility
             var writer = new StreamWriter("./config.conf");
             writer.WriteLine(fbd.SelectedPath);
             writer.Close();
-            UpdateComboBox(this);
+            UpdateComboBox(this, carBox);
         }
 
         private void carBox_SelectedValueChanged(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace AssettoCorsaTuningUtility
             picbox_car.ImageLocation = $@"{folders[rnd.Next(folders.Length)]}\\preview.jpg";
         }
 
-        private static void UpdateComboBox(Form1 f)
+        private static void UpdateComboBox(Form1 f, ComboBox cb)
         {
             if (f.AssettoCorsaFolderPath == "") return;
             var folders = Directory.GetDirectories($"{f.AssettoCorsaFolderPath}\\content\\cars\\");
@@ -55,20 +57,38 @@ namespace AssettoCorsaTuningUtility
             {
                 var dir = new DirectoryInfo(directory);
                 var dirName = dir.Name;
-                f.carBox.Items.Add(dirName);
+                cb.Items.Add(dirName);
             }
         }
 
         private void TuneThisBtn_Click(object sender, EventArgs e)
         {
+            EnginePage.Enabled = true;
+            EngineSwapPage.Enabled = true;
+            DriveTrainPage.Enabled = true;
             Utils.UnpackCar(_currentCar);
+            UpdateComboBox(this, CarBox2);
+            using (var file = new StreamReader($"{_currentCar}/data/engine.ini"))
+            {
+                engineTextBox.ReadOnly = true;
+                engineTextBox.Text = file.ReadToEnd();
+            }
+            using (var file = new StreamReader($"{_currentCar}/data/drivetrain.ini"))
+            {
+                drivetrainTextBox.ReadOnly = true;
+                drivetrainTextBox.Text = file.ReadToEnd();
+            }
         }
+
 
         private void CreateChildBtn_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }
-        
-        
+
+        private void OnCarValueChange(object sender, EventArgs e)
+        {
+            label1.Text = e.ToString();
+        }
     }
 }

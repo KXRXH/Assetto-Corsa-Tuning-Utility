@@ -34,8 +34,8 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="IniFileParser, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\IniFileParserStandard.1.0.1\lib\netstandard2.0\IniFileParser.dll</HintPath>
+        <Reference Include="IniFile, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\IniFile.NET.1.6.0\lib\net45\IniFile.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="mscorlib" />

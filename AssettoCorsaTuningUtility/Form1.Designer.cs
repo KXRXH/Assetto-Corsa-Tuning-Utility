@@ -41,21 +41,12 @@ namespace AssettoCorsaTuningUtility
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tabs = new System.Windows.Forms.TabControl();
             this.EnginePage = new System.Windows.Forms.TabPage();
-            this.idleRpmLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maxBoostLable = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.maxRpmLable = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.revLimiterLabel = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.limiterHzLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.engInertiaLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.engineTextBox = new System.Windows.Forms.RichTextBox();
             this.DriveTrainPage = new System.Windows.Forms.TabPage();
+            this.drivetrainTextBox = new System.Windows.Forms.RichTextBox();
+            this.EngineSwapPage = new System.Windows.Forms.TabPage();
+            this.Comment1 = new System.Windows.Forms.Label();
+            this.CarBox2 = new System.Windows.Forms.ComboBox();
             this.TuneThisBtn = new System.Windows.Forms.Button();
             this.CreateChildBtn = new System.Windows.Forms.Button();
             this.tooltp = new System.Windows.Forms.ToolTip(this.components);
@@ -63,14 +54,21 @@ namespace AssettoCorsaTuningUtility
             ((System.ComponentModel.ISupportInitialize) (this.picbox_car)).BeginInit();
             this.tabs.SuspendLayout();
             this.EnginePage.SuspendLayout();
+            this.DriveTrainPage.SuspendLayout();
+            this.EngineSwapPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // carBox
             // 
+            this.carBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.carBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.carBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.carBox.FormattingEnabled = true;
+            this.carBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.carBox.Location = new System.Drawing.Point(16, 33);
             this.carBox.Name = "carBox";
             this.carBox.Size = new System.Drawing.Size(421, 21);
+            this.carBox.Sorted = true;
             this.carBox.TabIndex = 0;
             this.carBox.SelectedIndexChanged += new System.EventHandler(this.carBox_SelectedValueChanged);
             // 
@@ -108,6 +106,7 @@ namespace AssettoCorsaTuningUtility
             // 
             this.tabs.Controls.Add(this.EnginePage);
             this.tabs.Controls.Add(this.DriveTrainPage);
+            this.tabs.Controls.Add(this.EngineSwapPage);
             this.tabs.Location = new System.Drawing.Point(478, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -116,20 +115,8 @@ namespace AssettoCorsaTuningUtility
             // 
             // EnginePage
             // 
-            this.EnginePage.Controls.Add(this.idleRpmLabel);
-            this.EnginePage.Controls.Add(this.textBox1);
-            this.EnginePage.Controls.Add(this.label8);
-            this.EnginePage.Controls.Add(this.label7);
-            this.EnginePage.Controls.Add(this.maxBoostLable);
-            this.EnginePage.Controls.Add(this.textBox6);
-            this.EnginePage.Controls.Add(this.maxRpmLable);
-            this.EnginePage.Controls.Add(this.textBox5);
-            this.EnginePage.Controls.Add(this.revLimiterLabel);
-            this.EnginePage.Controls.Add(this.textBox4);
-            this.EnginePage.Controls.Add(this.limiterHzLabel);
-            this.EnginePage.Controls.Add(this.textBox3);
-            this.EnginePage.Controls.Add(this.engInertiaLabel);
-            this.EnginePage.Controls.Add(this.textBox2);
+            this.EnginePage.Controls.Add(this.engineTextBox);
+            this.EnginePage.Enabled = false;
             this.EnginePage.Location = new System.Drawing.Point(4, 22);
             this.EnginePage.Name = "EnginePage";
             this.EnginePage.Padding = new System.Windows.Forms.Padding(3);
@@ -138,149 +125,71 @@ namespace AssettoCorsaTuningUtility
             this.EnginePage.Text = "Engine";
             this.EnginePage.UseVisualStyleBackColor = true;
             // 
-            // idleRpmLabel
+            // engineTextBox
             // 
-            this.idleRpmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.idleRpmLabel.Location = new System.Drawing.Point(6, 112);
-            this.idleRpmLabel.Name = "idleRpmLabel";
-            this.idleRpmLabel.Size = new System.Drawing.Size(115, 18);
-            this.idleRpmLabel.TabIndex = 15;
-            this.idleRpmLabel.Text = "Idle rpm";
-            this.idleRpmLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.idleRpmLabel, "Idle rpm");
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(127, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label8.Location = new System.Drawing.Point(219, 158);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 23);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "DAMAGE";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label7.Location = new System.Drawing.Point(219, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 23);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "ENGINE DATA";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // maxBoostLable
-            // 
-            this.maxBoostLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.maxBoostLable.Location = new System.Drawing.Point(6, 212);
-            this.maxBoostLable.Name = "maxBoostLable";
-            this.maxBoostLable.Size = new System.Drawing.Size(115, 18);
-            this.maxBoostLable.TabIndex = 11;
-            this.maxBoostLable.Text = "Max boost";
-            this.maxBoostLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.maxBoostLable, "Level of TOTAL boost before the engine starts to take damage");
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(127, 210);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(146, 20);
-            this.textBox6.TabIndex = 10;
-            // 
-            // maxRpmLable
-            // 
-            this.maxRpmLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.maxRpmLable.Location = new System.Drawing.Point(6, 184);
-            this.maxRpmLable.Name = "maxRpmLable";
-            this.maxRpmLable.Size = new System.Drawing.Size(115, 18);
-            this.maxRpmLable.TabIndex = 9;
-            this.maxRpmLable.Text = "Max rpm";
-            this.maxRpmLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.maxRpmLable, "RPM at which the engine starts to take damage");
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(127, 184);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 20);
-            this.textBox5.TabIndex = 8;
-            // 
-            // revLimiterLabel
-            // 
-            this.revLimiterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.revLimiterLabel.Location = new System.Drawing.Point(6, 86);
-            this.revLimiterLabel.Name = "revLimiterLabel";
-            this.revLimiterLabel.Size = new System.Drawing.Size(115, 18);
-            this.revLimiterLabel.TabIndex = 7;
-            this.revLimiterLabel.Text = "Rev limiter";
-            this.revLimiterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.revLimiterLabel, "Engine rev limiter. 0 no limiter");
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(127, 84);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(146, 20);
-            this.textBox4.TabIndex = 6;
-            // 
-            // limiterHzLabel
-            // 
-            this.limiterHzLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.limiterHzLabel.Location = new System.Drawing.Point(6, 60);
-            this.limiterHzLabel.Name = "limiterHzLabel";
-            this.limiterHzLabel.Size = new System.Drawing.Size(115, 18);
-            this.limiterHzLabel.TabIndex = 5;
-            this.limiterHzLabel.Text = "Limiter hz";
-            this.limiterHzLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.limiterHzLabel, "Frequency of engine limiter");
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(127, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // engInertiaLabel
-            // 
-            this.engInertiaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.engInertiaLabel.Location = new System.Drawing.Point(6, 34);
-            this.engInertiaLabel.Name = "engInertiaLabel";
-            this.engInertiaLabel.Size = new System.Drawing.Size(115, 18);
-            this.engInertiaLabel.TabIndex = 3;
-            this.engInertiaLabel.Text = "Engine inertia";
-            this.engInertiaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tooltp.SetToolTip(this.engInertiaLabel, "Engine inertia");
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(127, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 2;
+            this.engineTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.engineTextBox.Location = new System.Drawing.Point(0, -1);
+            this.engineTextBox.Name = "engineTextBox";
+            this.engineTextBox.ReadOnly = true;
+            this.engineTextBox.ShortcutsEnabled = false;
+            this.engineTextBox.Size = new System.Drawing.Size(558, 480);
+            this.engineTextBox.TabIndex = 0;
+            this.engineTextBox.Text = "";
             // 
             // DriveTrainPage
             // 
+            this.DriveTrainPage.Controls.Add(this.drivetrainTextBox);
+            this.DriveTrainPage.Enabled = false;
             this.DriveTrainPage.Location = new System.Drawing.Point(4, 22);
             this.DriveTrainPage.Name = "DriveTrainPage";
             this.DriveTrainPage.Padding = new System.Windows.Forms.Padding(3);
             this.DriveTrainPage.Size = new System.Drawing.Size(559, 480);
-            this.DriveTrainPage.TabIndex = 1;
+            this.DriveTrainPage.TabIndex = 2;
             this.DriveTrainPage.Text = "Drivetrain";
             this.DriveTrainPage.UseVisualStyleBackColor = true;
+            // 
+            // drivetrainTextBox
+            // 
+            this.drivetrainTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.drivetrainTextBox.Location = new System.Drawing.Point(0, 0);
+            this.drivetrainTextBox.Name = "drivetrainTextBox";
+            this.drivetrainTextBox.ReadOnly = true;
+            this.drivetrainTextBox.ShortcutsEnabled = false;
+            this.drivetrainTextBox.Size = new System.Drawing.Size(558, 480);
+            this.drivetrainTextBox.TabIndex = 1;
+            this.drivetrainTextBox.Text = "";
+            // 
+            // EngineSwapPage
+            // 
+            this.EngineSwapPage.Controls.Add(this.Comment1);
+            this.EngineSwapPage.Controls.Add(this.CarBox2);
+            this.EngineSwapPage.Enabled = false;
+            this.EngineSwapPage.Location = new System.Drawing.Point(4, 22);
+            this.EngineSwapPage.Name = "EngineSwapPage";
+            this.EngineSwapPage.Padding = new System.Windows.Forms.Padding(3);
+            this.EngineSwapPage.Size = new System.Drawing.Size(559, 480);
+            this.EngineSwapPage.TabIndex = 3;
+            this.EngineSwapPage.Text = " Engine Swap";
+            this.EngineSwapPage.UseVisualStyleBackColor = true;
+            // 
+            // Comment1
+            // 
+            this.Comment1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle) ((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.Comment1.Location = new System.Drawing.Point(15, 3);
+            this.Comment1.Name = "Comment1";
+            this.Comment1.Size = new System.Drawing.Size(538, 23);
+            this.Comment1.TabIndex = 9;
+            this.Comment1.Text = "Choose the car which engine you want to swap:";
+            this.Comment1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CarBox2
+            // 
+            this.CarBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CarBox2.FormattingEnabled = true;
+            this.CarBox2.Location = new System.Drawing.Point(15, 29);
+            this.CarBox2.Name = "CarBox2";
+            this.CarBox2.Size = new System.Drawing.Size(538, 21);
+            this.CarBox2.TabIndex = 8;
             // 
             // TuneThisBtn
             // 
@@ -308,13 +217,13 @@ namespace AssettoCorsaTuningUtility
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1011, 23);
             this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1074, 553);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CreateChildBtn);
@@ -324,36 +233,35 @@ namespace AssettoCorsaTuningUtility
             this.Controls.Add(this.label_path);
             this.Controls.Add(this.set_path_button);
             this.Controls.Add(this.carBox);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
-            this.Text = "Assetto Corsa Tuning Utility";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.picbox_car)).EndInit();
             this.tabs.ResumeLayout(false);
             this.EnginePage.ResumeLayout(false);
-            this.EnginePage.PerformLayout();
+            this.DriveTrainPage.ResumeLayout(false);
+            this.EngineSwapPage.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.RichTextBox engineTextBox;
+
+        private System.Windows.Forms.RichTextBox drivetrainTextBox;
+
+        private System.Windows.Forms.ComboBox CarBox2;
+
+        private System.Windows.Forms.Label Comment1;
+
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.TabPage EngineSwapPage;
+        
+        private System.Windows.Forms.RichTextBox richTextBox1;
+
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label maxBoostLable;
 
-        private System.Windows.Forms.Label engInertiaLabel;
-        private System.Windows.Forms.TextBox textBox1;
-
-        private System.Windows.Forms.Label label8;
-
-        private System.Windows.Forms.Label label7;
-        private ToolTip tooltp;
-        private System.Windows.Forms.Label limiterHzLabel;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-
-        private System.Windows.Forms.Label maxRpmLable;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label revLimiterLabel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label idleRpmLabel;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ToolTip tooltp;
 
         private System.Windows.Forms.Button CreateChildBtn;
 

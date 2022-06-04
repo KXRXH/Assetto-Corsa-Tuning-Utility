@@ -28,5 +28,11 @@ namespace AssettoCorsaTuningUtility
             // Backup of the original "data.acd".
             File.Move($"{carPath}\\data.acd", $"{carPath}\\data_back_up.acd");
         }
+
+        public static void UpdateCarData()
+        {
+            
+        }
+
     }
 }
