@@ -61,30 +61,14 @@ namespace AssettoCorsaTuningUtility
 
         private void TuneThisBtn_Click(object sender, EventArgs e)
         {
-            if (!Directory.Exists($"{_currentCar}/data") && File.Exists($"{_currentCar}/data.acd"))
-            {
-                Directory.CreateDirectory($"{_currentCar}/data");
-
-                ProcessStartInfo psi = new ProcessStartInfo();
-                psi.FileName = $"\"{Directory.GetCurrentDirectory()}\\utils\\quickbms\\quickbms.exe\"";
-
-                psi.Arguments = string.Join(" ", ".\\utils\\quickbms\\ACExtract.bms", " ", $"{_currentCar}\\data.acd",
-                    " ", $"{_currentCar}\\data\\");
-                psi.UseShellExecute = false;
-                psi.CreateNoWindow = true;
-                psi.WindowStyle = ProcessWindowStyle.Hidden;
-
-                var proc = new Process();
-                proc.StartInfo = psi;
-                proc.Start();
-                proc.WaitForExit();
-                File.Move($"{_currentCar}\\data.acd", $"{_currentCar}\\data_back_up.acd");
-            }
+            Utils.UnpackCar(_currentCar);
         }
 
         private void CreateChildBtn_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }
+        
+        
     }
 }
